@@ -11,7 +11,7 @@ Jake Sandler ([jsandler18](https://github.com/jsandler18)) called
 
 Versions of a minimal implementation of an OS for several version of the
 Raspberry Pi are included with associated build configuration and tooling.
-Earlier versions of the Pi can be emulated with QEMU but later versions require
+Earlier versions of the Pi can be emulated with QEMU but other versions require
 hardware to run.
 
 ### Raspberry Pi
@@ -21,7 +21,8 @@ many years ago.
 
 ### Raspberry Pi 2B
 
-The 2B is supported by QEMU, which is used to run the OS since I don't have one.
+The 2B is supported by QEMU, which is used to run the OS on this version since
+I don't have one.
 
 ### Raspberry Pi 3B
 
@@ -33,4 +34,17 @@ TODO
 
 ## Usage
 
+This project currently uses a simple Makefile for building the OS images.
+
 TODO
+
+## Acknowledgements
+
+Always give credit where it's due.
+
+- The `ubuntu-22.04-embedded` Docker image and associated VS Code Dev Container
+  configuration were respectfully swiped from the very promising
+  [adaptabuild](https://github.com/rhempel/adaptabuild) project by Ralph Hempel
+  (@rhempel) for my own educational purposes of learning how to use dev
+  containers and learn how adaptabuild works. If you're looking for a
+  containerized embedded build system for VS Code, check it out!
