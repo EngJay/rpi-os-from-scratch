@@ -1,0 +1,22 @@
+{
+    "artificialDelayMilliseconds": 250,
+    "keepExistingTerminalsOpen": false,
+    "runOnStartup": true,
+    "restoreTerminals.terminals": [
+      {
+        "splitTerminals": [
+          {
+            "name": "projects",
+            "commands": ["cd projects",]
+          },
+          {
+            "name": "projects",
+            "commands": ["cd projects",]
+          },
+        ]
+      },
+    ],
+    "task.autoDetect": "off",
+    "task.allowAutomaticTasks": "off",
+    "cortex-debug.variableUseNaturalFormat": false,
+  }
