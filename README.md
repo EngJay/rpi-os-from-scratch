@@ -9,7 +9,7 @@ This repo contains experimentation and tinkering based on a guide written by
 Jake Sandler ([jsandler18](https://github.com/jsandler18)) called
 [Building an Operating System for the Raspberry Pi](https://jsandler18.github.io/).
 
-Versions of a minimal implementation of an OS for several version of the
+Versions of a minimal implementation of an OS for several versions of the
 Raspberry Pi are included with associated build configuration and tooling.
 Earlier versions of the Pi can be emulated with QEMU but other versions require
 hardware to run.
@@ -46,5 +46,5 @@ Always give credit where it's due.
   configuration were respectfully swiped from the very promising
   [adaptabuild](https://github.com/rhempel/adaptabuild) project by Ralph Hempel
   (@rhempel) for my own educational purposes of learning how to use dev
-  containers and learn how adaptabuild works. If you're looking for a
+  containers and how adaptabuild works. If you're looking for a
   containerized embedded build system for VS Code, check it out!
