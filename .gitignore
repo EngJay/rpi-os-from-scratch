@@ -1,3 +1,29 @@
+
+# All build output
+/build/*
+# All artifacts output
+/artifacts/*
+
+# Temporary ignore of nanopb_poc
+src/nanopb_poc/
+
+# Ignore the VSCode generated directories
+#
+.cache
+.dotnet
+.local
+.ssh
+.vscode-server
+.devcontainer/.*Marker
+
+# Ignore the session generated files
+.bash_history
+.viminfo
+.cortex-debug
+
+# Ignore Python history files
+**/.python_history
+
 # Prerequisites
 *.d
 
