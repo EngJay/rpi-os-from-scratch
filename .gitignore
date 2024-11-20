@@ -1,6 +1,10 @@
 
+# Generated.
+kernel.img
+
 # All build output
 /build/*
+
 # All artifacts output
 /artifacts/*
 
