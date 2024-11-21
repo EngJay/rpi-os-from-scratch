@@ -6,12 +6,12 @@
       {
         "splitTerminals": [
           {
-            "name": "projects",
-            "commands": ["cd projects",]
+            "name": "kernel",
+            "commands": ["cd kernel",]
           },
           {
-            "name": "projects",
-            "commands": ["cd projects",]
+            "name": "rpi-dev",
+            "commands": []
           },
         ]
       },
@@ -19,4 +19,4 @@
     "task.autoDetect": "off",
     "task.allowAutomaticTasks": "off",
     "cortex-debug.variableUseNaturalFormat": false,
-  }
+}
