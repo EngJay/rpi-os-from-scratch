@@ -100,22 +100,15 @@ endif
 # 
 OBJS := $(patsubst %.c, $(BUILD_DIR)/raspi$(PI_MODEL)/%.o, $(filter %.c, $(SRCS))) \
         $(patsubst %.S, $(BUILD_DIR)/raspi$(PI_MODEL)/%.o, $(filter %.S, $(SRCS)))
-		
-# OBJS := $(patsubst %.c, $(BUILD_DIR)/raspi$(PI_MODEL)/%.o, $(SRCS)) \
-#         $(patsubst %.S, $(BUILD_DIR)/raspi$(PI_MODEL)/%.o, $(SRCS))
 
 # Abstract inc dirs.
 # 
 INC_DIRS += src/common
 INC_DIRS += src/kernel
 
-$(info INC_DIRS: $(INC_DIRS))
-
 # Include flags.
 # 
 CFLAGS += $(addprefix -I,$(INC_DIRS))
-
-$(info CFLAGS: $(CFLAGS))
 
 # Phone targets.
 # 
@@ -137,7 +130,7 @@ $(TARGET): $(OBJS)
 	$(CC) -T$(LD_SCRIPT) $(OBJS) -o $@ $(LFLAGS)
 
 clean:
-	$(Q)$(RM_DIR) build
+	$(Q)$(RMDIR) build
 
 run: build
 	@if [ "$(PI_MODEL)" = "2b" ]; then \

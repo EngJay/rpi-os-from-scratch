@@ -30,4 +30,4 @@ INC_DIRS += $(THIS_DIR)src/kernel
 
 # Linker script.
 # 
-LD_SCRIPT += $(THIS_DIR)linker.ld
+LD_SCRIPT := $(THIS_DIR)linker.ld
