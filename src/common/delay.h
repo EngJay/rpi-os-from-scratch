@@ -6,8 +6,8 @@
  * @date 2024-11-21
  * @copyright Copyright (c) 2024
  */
-#ifndef KERNEL_2B_INC_COMMON_DELAY_H
-#define KERNEL_2B_INC_COMMON_DELAY_H
+#ifndef COMMON_DELAY_H
+#define COMMON_DELAY_H
 
 #include <stddef.h>
 #include <stdint.h>
