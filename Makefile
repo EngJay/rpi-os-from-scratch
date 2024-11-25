@@ -19,8 +19,14 @@
 # 
 # Model 2B is the default.
 # 
-PI_MODEL ?= 2b
+PI_MODEL ?=
 SUPPORTED_PI_MODELS := 1 2b 3b 4b
+
+# Bail if model is not set.
+# 
+ifndef PI_MODEL
+$(error PI_MODEL is not set. Please set it before running make.)
+endif
 
 # Bail if model is not supported.
 # 
@@ -133,7 +139,9 @@ clean:
 	$(Q)$(RMDIR) build
 
 run: build
-	@if [ "$(PI_MODEL)" = "2b" ]; then \
+	@if [ "$(PI_MODEL)" = "1" ]; then \
+		qemu-system-arm -m 512 -M raspi1ap -serial stdio -kernel $(TARGET); \
+	elif [ "$(PI_MODEL)" = "2b" ]; then \
 		qemu-system-arm -m 1024 -M raspi2b -serial stdio -kernel $(TARGET); \
 	else \
 		echo "Unsupported PI_MODEL for run target."; \
