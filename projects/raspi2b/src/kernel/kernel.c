@@ -104,7 +104,7 @@ void kernel_main(uint32_t r0, uint32_t r1, uint32_t atags)
     (void) atags;
 
     uart_init();
-    uart_puts("Hello, kernel world!\r\n");
+    uart_puts("Hello, kernel world! Love, RPi2x.\r\n");
 
     while (1)
     {
