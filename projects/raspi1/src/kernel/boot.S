@@ -14,12 +14,6 @@
 // r2 -> 0x00000100 - start of ATAGS
 // preserve these registers as argument for kernel_main
 _start:
-    // Shut off extra cores
-    mrc p15, 0, r5, c0, c0, 5
-    and r5, r5, #3
-    cmp r5, #0
-    bne halt
-
     // Setup the stack.
     ldr r5, =_start
     mov sp, r5

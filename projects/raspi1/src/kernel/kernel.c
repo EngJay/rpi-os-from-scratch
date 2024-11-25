@@ -24,7 +24,7 @@ static inline uint32_t mmio_read(uint32_t reg)
 enum
 {
     // The GPIO registers base address.
-    GPIO_BASE = 0x20000000, // For raspi1.
+    GPIO_BASE = 0x20200000, // For raspi1.
 
     GPPUD = (GPIO_BASE + 0x94),
     GPPUDCLK0 = (GPIO_BASE + 0x98),
