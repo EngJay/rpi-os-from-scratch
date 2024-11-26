@@ -126,7 +126,7 @@ build: $(TARGET)
 
 $(BUILD_DIR)/raspi$(PI_MODEL)/%.o: %.S
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -D__ASSEMBLY__ -c $< -o $@
 
 $(BUILD_DIR)/raspi$(PI_MODEL)/%.o: %.c
 	@mkdir -p $(dir $@)
