@@ -7,6 +7,8 @@
 THIS_MAKEFILE := $(lastword $(MAKEFILE_LIST))
 THIS_DIR := $(dir $(THIS_MAKEFILE))
 
+# Build for 64-bit.
+# 
 TOOLCHAIN_PREFIX = aarch64-linux-gnu
 
 # Set CPU and add project-specific flags.
