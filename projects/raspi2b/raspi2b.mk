@@ -11,6 +11,8 @@ THIS_DIR := $(dir $(THIS_MAKEFILE))
 # 
 CPU := cortex-a7
 CFLAGS += -DMODEL_2B
+IMG_NAME := kernel
+IMG_SUFFIX := elf
 
 # Sources.
 # 

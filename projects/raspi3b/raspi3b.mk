@@ -7,22 +7,24 @@
 THIS_MAKEFILE := $(lastword $(MAKEFILE_LIST))
 THIS_DIR := $(dir $(THIS_MAKEFILE))
 
+TOOLCHAIN_PREFIX = aarch64-linux-gnu
+
 # Set CPU and add project-specific flags.
 # 
-CPU := cortex-a7
+CPU := cortex-a53
 CFLAGS += -DMODEL_3B
 IMG_NAME := kernel8
+IMG_SUFFIX := elf
 
 # Sources.
 # 
-SRCS += $(THIS_DIR)src/common/delay.c
-SRCS += $(THIS_DIR)src/common/stdio.c
-SRCS += $(THIS_DIR)src/common/stdlib.c
+SRCS += $(THIS_DIR)src/common/mini_uart.c
 
 SRCS += $(THIS_DIR)src/kernel/kernel.c
-SRCS += $(THIS_DIR)src/kernel/uart.c
 
 SRCS += $(THIS_DIR)src/kernel/boot.S
+SRCS += $(THIS_DIR)src/kernel/mm.S
+SRCS += $(THIS_DIR)src/kernel/utils.S
 
 # Include dirs.
 # 
