@@ -3,19 +3,19 @@
 # 
 # Minimal operating system image and build configuration for the Raspberry Pi.
 # The OS is comprised of a minimal kernel with one UART configured to print a
-# "Hello, kernel world!" message and echo back keystrokes. 
+# "Hello, kernel world! Love, Rpixx." message and echo back keystrokes. 
 # 
-# The default target is the Raspberry Pi 2B, which can be run with QEMU. A run
-# target builds the OS image and runs it with qemu-system-arm.
+# A run target in included that builds the OS image and runs it with
+# qemu-system-arm.
 # 
 # Invoke the build system with:
 #
-# 	make PI_MODEL=xxx target
+# 	make PI_MODEL=xx [target]
 #
-# Raspberry Pi model (Options: 1, 2b, 3b, 4b)
+# Raspberry Pi model (Options: 2b, 3b, 4b)
 # 
 
-# Raspberry Pi model (Options: 1, 2b, 3b, 4b)
+# Raspberry Pi model (Options: 2b, 3b, 4b)
 # 
 # Model 2B is the default.
 # 
@@ -27,7 +27,7 @@
 # Raspberry Pi model to target.
 # 
 PI_MODEL ?=
-SUPPORTED_PI_MODELS := 1 2b 3b 4b
+SUPPORTED_PI_MODELS := 2b 3b 4b
 
 # Build and debug settings.
 # 
