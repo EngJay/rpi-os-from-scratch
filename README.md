@@ -44,13 +44,13 @@ make distclean
 
 Always give credit where it's due.
 
-- The `ubuntu-22.04-embedded` Docker image and associated VS Code Dev Container
-  configuration were respectfully swiped from the very promising
-  [adaptabuild](https://github.com/rhempel/adaptabuild) project by Ralph Hempel
-  ([rhempel](https://github.com/rhempel) on GitHub) for my own educational
-  purposes of learning how to use dev containers and how adaptabuild works. If
-  you're looking for a containerized embedded build system for VS Code, check it
-  out!
+- The `ubuntu-22.04-embedded` and `ubuntu-24.04-embedded` Docker images and
+  associated VS Code Dev Container  configuration were respectfully swiped from
+  the very promising [adaptabuild](https://github.com/rhempel/adaptabuild)
+  project by Ralph Hempel ([rhempel](https://github.com/rhempel) on GitHub) for
+  my own educational purposes of learning how to use dev containers and how
+  adaptabuild works and modified. If you're looking for a containerized embedded
+  build system for VS Code, check it out!
 
 - The initial inspiration for this repo was the guide written by Jake Sandler
   ([jsandler18](https://github.com/jsandler18) on GitHub) called
