@@ -149,9 +149,7 @@ CFLAGS += $(addprefix -I,$(INC_DIRS))
 build: $(TARGET)
 
 run: build
-	@if [ "$(PI_MODEL)" = "1" ]; then \
-		qemu-system-arm -m 512 -M raspi1ap -serial stdio -kernel $(TARGET); \
-	elif [ "$(PI_MODEL)" = "2b" ]; then \
+	@if [ "$(PI_MODEL)" = "2b" ]; then \
 		qemu-system-arm -m 1024 -M raspi2b -serial stdio -kernel $(TARGET); \
 	else \
 		echo "Unsupported PI_MODEL for run target."; \
