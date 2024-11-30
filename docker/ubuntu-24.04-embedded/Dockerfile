@@ -74,17 +74,6 @@ RUN wget -P /opt -x -nH --cut-dirs=1 \
       https://github.com/plantuml/plantuml/releases/download/v1.2024.6/plantuml-1.2024.6.jar \
  && ln -s /opt/plantuml/releases/download/v1.2024.6/plantuml-1.2024.6.jar /opt/plantuml/plantuml.jar
 
-# ENV QEMU_VER=9.1.2
-# ENV QEMU_TARGET_LIST=arm-softmmu,aarch64-softmmu
-# RUN wget https://download.qemu.org/qemu-${QEMU_VER}.tar.xz && \
-#     tar -xvf qemu-${QEMU_VER}.tar.xz && \
-#     cd qemu-${QEMU_VER} && \
-#     ./configure --target-list=${QEMU_TARGET_LIST} && \
-#     make -j$(nproc) && \
-#     make install && \
-#     cd .. && \
-#     rm -rf qemu-${QEMU_VER} qemu-${QEMU_VER}.tar.xz
-
 # Now install all the additional Python packages. On Ubuntu 24.04 and higher you will
 # get a warning about using pip on an externally managed Python installation. That's
 # great for keeping you from accidentally breaking your Pythion installation, but in this
@@ -95,6 +84,23 @@ RUN wget -P /opt -x -nH --cut-dirs=1 \
 COPY requirements.txt /tmp/requirements.txt
 
 RUN pip3 install --break-system-packages -r /tmp/requirements.txt
+
+# Install QEMU from sources to get more recent targets.
+# 
+# NOTE: Must come after python packages due to dependence on Ninja.
+# 
+RUN apt install --no-install-recommends -y libglib2.0-dev libfdt-dev \
+    libpixman-1-dev
+ENV QEMU_VER=9.1.2
+ENV QEMU_TARGET_LIST=arm-softmmu,aarch64-softmmu
+RUN wget https://download.qemu.org/qemu-${QEMU_VER}.tar.xz && \
+    tar -xf qemu-${QEMU_VER}.tar.xz && \
+    cd qemu-${QEMU_VER} && \
+    ./configure --target-list=${QEMU_TARGET_LIST} && \
+    make -j$(nproc) && \
+    make install && \
+    cd .. && \
+    rm -rf qemu-${QEMU_VER} qemu-${QEMU_VER}.tar.xz
 
 # Clean up the apt cache and lists to save space in the image
 #

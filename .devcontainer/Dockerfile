@@ -38,7 +38,7 @@ RUN apt update
 # [Optional] Add sudo support - omit if you don't need sudo privileges during
 #            development.
 #
-RUN apt install --no-install-recommends -y sudo qemu-system-arm git-lfs \
+RUN apt install --no-install-recommends -y sudo git-lfs \
  && echo $USER_NAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USER_NAME \
  && chmod 0440 /etc/sudoers.d/$USER_NAME \
  && git lfs install
