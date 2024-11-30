@@ -18,13 +18,11 @@ Raspberry Pi are included with associated build configuration and tooling.
 
 The kernel has been tested only on QEMU since I don't have one.
 
-### Raspberry Pi 3B
+### Raspberry Pi 3B and 4B
 
-The kernel has been tested on the hardware and QEMU.
-
-### Raspberry Pi 4B
-
-TODO
+The kernel has been tested on the hardware. The kernel runs in QEMU but the UART
+output is not received for unknown reasons, so the 3B/4B are not included in the
+run target. 
 
 ## Usage
 
@@ -33,7 +31,7 @@ This project currently uses a simple Makefile for building the OS images.
 To build the kernel, in the repo root run make with the PI_MODEL set to 2b or 3b.
 
 ```bash
-make PI_MODEL=[2b,3b]
+make PI_MODEL=[2b,3b,4b]
 ```
 
 A distclean targest is included to remove the build artifacts.
