@@ -6,8 +6,8 @@
       {
         "splitTerminals": [
           {
-            "name": "kernel",
-            "commands": ["cd kernel",]
+            "name": "rpi-dev",
+            "commands": []
           },
           {
             "name": "rpi-dev",
@@ -19,4 +19,5 @@
     "task.autoDetect": "off",
     "task.allowAutomaticTasks": "off",
     "cortex-debug.variableUseNaturalFormat": false,
+    "makefile.configureOnOpen": true,
 }
